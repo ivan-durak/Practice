@@ -6,21 +6,47 @@ public class Person {
     private int passportId;
 
     public static void main(String[] args) {
-        String firstName1 = "Pavel", firstName2 = "Mihail";
-        String lastName1 = "Ovchinkin", lastName2 = "Ortohov";
-        int passportId1 = 674523489, passportId2 = 239012965;
-        Person people1 = new Person();
-        Person people2 = new Person();
-        people1.setFirstName(firstName1);
-        people2.setFirstName(firstName2);
-        people1.setLastName(lastName1);
-        people2.setLastName(lastName2);
-        people1.setPassportId(passportId1);
-        people2.setPassportId(passportId2);
-        System.out.println("Первый человек- это " + people1.getFirstName() + " " + people1.getLastName()//
-                + " его паспорт:" + people1.getPassportId());
-        System.out.println("Первый человек- это " + people2.getFirstName() + " " + people2.getLastName()//
-                + " его паспорт:" + people2.getPassportId());
+        String firstName1 = "Pavel", firstName2 = "Mihail", firstName3 = "Egor";
+        String lastName1 = "Ovchinkin", lastName2 = "Ortohov", lastName3 = "Futonasov";
+        int passportId1 = 349023185, passportId2 = 674523489, passportId3 = 239012965;
+        Person firstPeople = new Person();
+        Person secondPeople = new Person(firstName1, lastName1);
+        Person thirdPeople = new Person(passportId2);
+        Person fourthPeople = new Person(firstName3, lastName3, passportId3);
+        secondPeople.setPassportId(passportId1);
+        thirdPeople.setFirstName(firstName2);
+        thirdPeople.setLastName(lastName2);
+        System.out.println("Первый Человек- это "+firstPeople.getFirstName()+" "+firstPeople.getLastName()//
+                +", "+"его паспорт "+firstPeople.getPassportId());
+        System.out.println("Второй Человек- это "+secondPeople.getFirstName()+" "+secondPeople.getLastName()//
+                +", "+"его паспорт "+secondPeople.getPassportId());
+        System.out.println("Третий Человек- это "+thirdPeople.getFirstName()+" "+thirdPeople.getLastName()//
+                +", "+"его паспорт "+thirdPeople.getPassportId());
+        System.out.println("Четвертый Человек- это "+fourthPeople.getFirstName()+" "+fourthPeople.getLastName()//
+                +", "+"его паспорт "+fourthPeople.getPassportId());
+    }
+    public Person() {
+        this.firstName = "";
+        this.lastName = "";
+        this.passportId = 0;
+    }
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passportId = 0;
+    }
+
+    public Person(int passportId) {
+        this.firstName = "";
+        this.lastName = "";
+        this.passportId = passportId;
+    }
+
+    public Person(String firstName, String lastName, int passportId) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.passportId = passportId;
     }
 
     public String getFirstName() {
