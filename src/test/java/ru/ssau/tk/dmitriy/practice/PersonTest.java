@@ -7,7 +7,7 @@ import static org.testng.Assert.*;
 
 public class PersonTest {
     @Test
-    public static void main(String[] args) {
+    public void testOfSet_Getters() {
         String firstName1 = "Потап", firstName2 = "Игнат";
         String lastName1 = "Капитулин", lastName2 = "Мумиев";
         int firstPassportId = 456327291, secondPassportId = 120385472;
