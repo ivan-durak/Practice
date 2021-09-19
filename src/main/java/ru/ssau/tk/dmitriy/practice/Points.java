@@ -24,6 +24,8 @@ public class Points {
         System.out.println("Координаты, полученные при умножении второй точки на число: x="//
                 + (Points.enlarge(secondPoint, number)).x + ", y="
                 + (Points.enlarge(secondPoint, number)).y + ", z=" + (Points.enlarge(secondPoint, number)).z);
+        System.out.println("Длина радиус-вектора первой точки: "+Points.length(firstPoint));
+        System.out.println("Длина радиус-вектора второй точки: "+Points.length(secondPoint));
     }
 
     private Points() {
@@ -62,6 +64,10 @@ public class Points {
         double coordinateY = changeablePoint.y * multiplier;
         double coordinateZ = changeablePoint.z * multiplier;
         return new Point(coordinateX, coordinateY, coordinateZ);
+    }
+
+    public static double length(Point inputPoint) {
+        return inputPoint.length();
     }
 }
 
