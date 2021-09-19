@@ -29,10 +29,15 @@ public class Points {
                 + (Points.opposite(firstPoint)).y + ", z=" + (Points.opposite(firstPoint)).z);
         System.out.println("Точка с противополжными координатами: x=" + (Points.opposite(secondPoint)).x + ", y="//
                 + (Points.opposite(secondPoint)).y + ", z=" + (Points.opposite(secondPoint)).z);
-        System.out.println("Точка с обратными координатами"+ (Points.inverse(firstPoint)).x + ", y=" //
+        System.out.println("Точка с обратными координатами: x=" + (Points.inverse(firstPoint)).x + ", y=" //
                 + (Points.inverse(firstPoint)).y + ", z=" + (Points.inverse(firstPoint)).z);
-        System.out.println("Точка с обратными координатами"+ (Points.inverse(secondPoint)).x + ", y=" //
+        System.out.println("Точка с обратными координатами: x=" + (Points.inverse(secondPoint)).x + ", y=" //
                 + (Points.inverse(secondPoint)).y + ", z=" + (Points.inverse(secondPoint)).z);
+        System.out.println("Скалярное произведение векторов равно " + scalarProduct(firstPoint, secondPoint));
+        System.out.println("Вектор, полученный в результате векторного произведения имеет координаты: x="//
+                + (Points.vectorProduct(firstPoint, secondPoint)).x + ", y=" //
+                + (Points.vectorProduct(firstPoint, secondPoint)).y + ", z=" //
+                + (Points.vectorProduct(firstPoint, secondPoint)).z);
     }
 
     private Points() {
@@ -89,6 +94,16 @@ public class Points {
         double coordinateY = 1 / (inputPoint.y);
         double coordinateZ = 1 / (inputPoint.z);
         return new Point(coordinateX, coordinateY, coordinateZ);
+    }
+
+    public static double scalarProduct(Point firstPoint, Point secondPoint) {
+        return (firstPoint.x * secondPoint.x) + (firstPoint.y * secondPoint.y) + (firstPoint.z * secondPoint.z);
+    }
+
+    public static Point vectorProduct(Point firstPoint, Point secondPoint) {
+        return new Point((firstPoint.y * secondPoint.z - firstPoint.z * secondPoint.y)//
+                , (firstPoint.z * secondPoint.x - firstPoint.x * secondPoint.z)//
+                , (firstPoint.x * secondPoint.y - firstPoint.y * secondPoint.x));
     }
 }
 
