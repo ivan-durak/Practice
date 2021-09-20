@@ -4,33 +4,22 @@ public class RandomClass {
     public static void main(String[] args) {
         Person person = new Person();
         person.setFirstName("Arkadiy");
-        int number = 5;
-        checkInt(number);
-        checkPerson(person);
-        System.out.println(number);
+        checkAnotherPerson(person);
         System.out.println(person.getFirstName());
     }
 
-    private static void checkInt(int number) {
-        number = 10;
-        System.out.println(number);
-    }
-
-    private static void checkPerson(Person person) {
-        person.setFirstName("Oleg");
+    private static void checkAnotherPerson(Person person) {
+        person = new Person();
+        person.setFirstName("Ignat");
         System.out.println(person.getFirstName());
     }
 
 }
-/*Первая 10 выводится, потому что в статистическом методе checkInt прописана команда вывода в консоль.
+/*Стоит заметить, что в процессе выполнения программы было создано 2 объекта типа Person.
 
-Во второй строчке выводится Oleg, потому что, передавая в метод CheckPerson, любой экземпляр класса Person
-в методе поле, отвечающее за имя всегда будет переименовываться как Oleg.
+До метода checkAnotherPerson() создается 1-ый объект класса Person, которому мы устанавливаем имя-Аркадий,
+при вызове checkAnotherPerson(person) мы хоть и передаем в качестве параметра 1-ый объект, на самом деле,
+в методе создается 2-ой объект, которому мы и устанавливае имя-Игнат.
 
-В третьей строчке выводится 5, потому что при передаче в метод checkInt переменной number в метод передается только
-ее копия, а само значение 5 отсатается неизмененным, поэтому прописывая вне метода метод System.out.println(number)
-он возвращает 5.
-
-Во втором случае тоже возвращается Oleg, потому что поле FirstName уже было изменено при вызове метода CheckPerson,
-это происходит, потому что объект передается в методы по ссылке и никаких копирований значений не происходит
- */
+Этим объясняется вывод сначала имени-Игнат, а затем-Аркадий.
+*/
