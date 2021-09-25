@@ -31,6 +31,16 @@ public class PersonTest {
         Assert.assertEquals(human.getPassportId(), testValue);
     }
 
+    @Test
+    public void testOfFieldGender() {
+        Gender testGender = Gender.Female;
+        Person firstTestObject = new Person("Михаил", "Ортохов", 123432565);
+        firstTestObject.setGender(testGender);
+        Person secondTestObject = new Person("Егор", "Футонасов", 734926457, "Male");
+        Assert.assertEquals(firstTestObject.getGender(), Gender.Female);
+        Assert.assertEquals(secondTestObject.getGender(),Gender.Male);
+    }
+
     //неработающие методы
     @Test
     public void testOfFieldFirstName2() { //не будет выполнен,т.к. вызов проверки до установки поля
@@ -69,8 +79,8 @@ public class PersonTest {
     public void testOfSecondConstructor() { //Конструктор с двумя параметрами:имя и фамилия
         String testFirstName = "Арарат", testLastName = "Манекян";
         Person testObject = new Person(testFirstName, testLastName);
-        Assert.assertEquals(testObject.getFirstName(), testFirstName);
-        Assert.assertEquals(testObject.getLastName(), testLastName);
+        Assert.assertEquals(testObject.getFirstName(), "Арарат");
+        Assert.assertEquals(testObject.getLastName(), "Манекян");
         Assert.assertEquals(testObject.getPassportId(), 0);
     }
 
@@ -80,7 +90,7 @@ public class PersonTest {
         Person testObject = new Person(testValue);
         Assert.assertEquals(testObject.getFirstName(), ""); //в оригинальном кострукторе так
         Assert.assertEquals(testObject.getLastName(), "");
-        Assert.assertEquals(testObject.getPassportId(), testValue);
+        Assert.assertEquals(testObject.getPassportId(), 237451982);
     }
 
     @Test
@@ -88,8 +98,20 @@ public class PersonTest {
         String testFirstName = "Аполон", testLastName = "Вяземский";
         int testValue = 109428394;
         Person testObject = new Person(testFirstName, testLastName, testValue);
-        Assert.assertEquals(testObject.getFirstName(), testFirstName);
-        Assert.assertEquals(testObject.getLastName(), testLastName);
-        Assert.assertEquals(testObject.getPassportId(), testValue);
+        Assert.assertEquals(testObject.getFirstName(), "Аполон");
+        Assert.assertEquals(testObject.getLastName(), "Вяземский");
+        Assert.assertEquals(testObject.getPassportId(), 109428394);
+    }
+
+    @Test
+    public void testOfFifthConstructor() { //Коструктор с 4-мя параметрами
+        String testFirstName = "Павел", testLastName = "Овчинкин";
+        int testPassportId = 349023185;
+        Gender gender = Gender.Male;
+        Person testObject = new Person(testFirstName, testLastName, testPassportId, gender);
+        Assert.assertEquals(testObject.getFirstName(), "Павел");
+        Assert.assertEquals(testObject.getLastName(), "Овчинкин");
+        Assert.assertEquals(testObject.getPassportId(), 349023185);
+        Assert.assertEquals(testObject.getGender(), Gender.Male);
     }
 }
