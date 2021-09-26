@@ -9,6 +9,7 @@ public class OutPutClass {
         long longValue = 2;
         float floatValue = 2;
         double doubleValue = 2;
+        boolean booleanValue = false;
         Person firstObject = new Person();
         Person secondObject = null;
         String thirdObject = "string";
@@ -19,6 +20,7 @@ public class OutPutClass {
         OutPutClass.printType(longValue);
         OutPutClass.printType(floatValue);
         OutPutClass.printType(doubleValue);
+        OutPutClass.printType(booleanValue);
         OutPutClass.printType(secondObject);
         OutPutClass.printType(firstObject);
         OutPutClass.printType(thirdObject);
