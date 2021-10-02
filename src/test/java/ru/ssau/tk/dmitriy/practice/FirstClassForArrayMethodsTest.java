@@ -19,10 +19,18 @@ public class FirstClassForArrayMethodsTest {
     }
 
     @Test
-    public void testGetArraysOfOnes() {
+    public void testGetArrayOfOnes() {
         FirstClassForArrayMethods object = new FirstClassForArrayMethods();
-        double[] array = object.getArraysOfOnes(6);
+        double[] array = object.getArrayOfOnes(6);
         double[] knownArray = {2.0, 1.0, 1.0, 1.0, 1.0, 2.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
+
+    @Test
+    public void testGetArrayOfOddIntegerNumbers() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOfOddIntegerNumbers(5);
+        double[] knownArray = {1.0, 3.0, 5.0, 7.0, 9.0};
         Assert.assertTrue(Arrays.equals(array, knownArray));
     }
 }
