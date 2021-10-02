@@ -14,9 +14,15 @@ public class FirstClassForArrayMethodsTest {
     public void testCreateArrayWithDimension() {
         FirstClassForArrayMethods object = new FirstClassForArrayMethods();
         double[] array = object.createArrayWithDimension(5);
-        Assert.assertTrue(Arrays.equals(array, object.createArrayWithDimension(5)));
-        for (double element : array) {
-            Assert.assertEquals(element, 0.0);
-        }
+        double[] knownArray = {0.0, 0.0, 0.0, 0.0, 0.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
+
+    @Test
+    public void testGetArraysOfOnes() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArraysOfOnes(6);
+        double[] knownArray = {2.0, 1.0, 1.0, 1.0, 1.0, 2.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
     }
 }
