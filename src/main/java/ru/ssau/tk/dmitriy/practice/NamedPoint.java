@@ -26,6 +26,6 @@ public class NamedPoint extends Point implements Resettable {
 
     @Override
     public void reset() {
-        name="Absent";
+        name = "Absent";
     }
 }
