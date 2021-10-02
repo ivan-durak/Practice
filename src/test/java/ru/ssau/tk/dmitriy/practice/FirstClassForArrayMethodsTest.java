@@ -33,4 +33,12 @@ public class FirstClassForArrayMethodsTest {
         double[] knownArray = {1.0, 3.0, 5.0, 7.0, 9.0};
         Assert.assertTrue(Arrays.equals(array, knownArray));
     }
+
+    @Test
+    public void testGetArrayOfEvenDecreasingNumbers() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOfEvenDecreasingNumbers(7);
+        double[] knownArray = {14.0,12.0, 10.0, 8.0, 6.0, 4.0, 2.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
 }

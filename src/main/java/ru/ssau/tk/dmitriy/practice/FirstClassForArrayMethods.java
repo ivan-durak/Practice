@@ -24,4 +24,12 @@ public class FirstClassForArrayMethods {
         }
         return array;
     }
+
+    public double[] getArrayOfEvenDecreasingNumbers(int dimension) {
+        double[] array = new double[dimension];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (dimension - i) * 2;
+        }
+        return array;
+    }
 }
