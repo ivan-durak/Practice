@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class PersonTest {
-    //работающие методы
     @Test
     public void testOfFieldFirstName() { //работающий метод
         String testValue = null; //для введения вместо null:Потап, Игнат
@@ -33,37 +32,39 @@ public class PersonTest {
 
     @Test
     public void testOfFieldGender() {
-        Gender testGender = Gender.Female;
+        Gender testGender = Gender.FEMALE;
         Person firstTestObject = new Person("Михаил", "Ортохов", 123432565);
         firstTestObject.setGender(testGender);
         Person secondTestObject = new Person("Егор", "Футонасов", 734926457, "Male");
-        Assert.assertEquals(firstTestObject.getGender(), Gender.Female);
-        Assert.assertEquals(secondTestObject.getGender(),Gender.Male);
+        Assert.assertEquals(firstTestObject.getGender(), Gender.FEMALE);
+        Assert.assertEquals(secondTestObject.getGender(), Gender.MALE);
     }
 
-    //неработающие методы
     @Test
-    public void testOfFieldFirstName2() { //не будет выполнен,т.к. вызов проверки до установки поля
-        String testValue = null;
+    public void testOfFieldFirstName2() {
+        String testValue = "Артур";
         Person human = new Person();
-        Assert.assertEquals(human.getFirstName(), testValue);
+        Assert.assertEquals(human.getFirstName(), "");
         human.setFirstName(testValue);
+        Assert.assertEquals(human.getFirstName(), "Артур");
     }
 
     @Test
-    public void testOfFieldSecondName2() { //не будет выполнен,т.к. вызов проверки до установки поля
-        String testValue = null;
+    public void testOfFieldSecondName2() {
+        String testValue = "Повенков";
         Person human = new Person();
-        Assert.assertEquals(human.getLastName(), testValue);
+        Assert.assertEquals(human.getLastName(), "");
         human.setLastName(testValue);
+        Assert.assertEquals(human.getLastName(), "Повенков");
     }
 
     @Test
-    public void testOfFieldPassportId2() { //не будет выполнен,т.к. вызов проверки до установки поля
+    public void testOfFieldPassportId2() {
         int testValue = 456327291;
         Person human = new Person();
-        Assert.assertEquals(human.getPassportId(), testValue);
+        Assert.assertEquals(human.getPassportId(), 0);
         human.setPassportId(testValue);
+        Assert.assertEquals(human.getPassportId(), 456327291);
     }
 
     //тесты конструкторов
@@ -107,11 +108,11 @@ public class PersonTest {
     public void testOfFifthConstructor() { //Коструктор с 4-мя параметрами
         String testFirstName = "Павел", testLastName = "Овчинкин";
         int testPassportId = 349023185;
-        Gender gender = Gender.Male;
+        Gender gender = Gender.MALE;
         Person testObject = new Person(testFirstName, testLastName, testPassportId, gender);
         Assert.assertEquals(testObject.getFirstName(), "Павел");
         Assert.assertEquals(testObject.getLastName(), "Овчинкин");
         Assert.assertEquals(testObject.getPassportId(), 349023185);
-        Assert.assertEquals(testObject.getGender(), Gender.Male);
+        Assert.assertEquals(testObject.getGender(), Gender.MALE);
     }
 }
