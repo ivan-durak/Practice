@@ -38,7 +38,15 @@ public class FirstClassForArrayMethodsTest {
     public void testGetArrayOfEvenDecreasingNumbers() {
         FirstClassForArrayMethods object = new FirstClassForArrayMethods();
         double[] array = object.getArrayOfEvenDecreasingNumbers(7);
-        double[] knownArray = {14.0,12.0, 10.0, 8.0, 6.0, 4.0, 2.0};
+        double[] knownArray = {14.0, 12.0, 10.0, 8.0, 6.0, 4.0, 2.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
+
+    @Test
+    public void testGetArrayOfFibonacciNumbers() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOfFibonacciNumbers(10);
+        double[] knownArray = {0.0, 1.0, 1.0, 2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 34.0};
         Assert.assertTrue(Arrays.equals(array, knownArray));
     }
 }
