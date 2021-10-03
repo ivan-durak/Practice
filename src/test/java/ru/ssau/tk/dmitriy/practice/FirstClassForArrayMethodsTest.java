@@ -49,4 +49,12 @@ public class FirstClassForArrayMethodsTest {
         double[] knownArray = {0.0, 1.0, 1.0, 2.0, 3.0, 5.0, 8.0, 13.0, 21.0, 34.0};
         Assert.assertTrue(Arrays.equals(array, knownArray));
     }
+
+    @Test
+    public void testGetArrayOfSquareOfNumbers() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOfSquareOfNumbers(10);
+        double[] knownArray = {0.0, 1.0, 4.0, 9.0, 16.0, 25.0, 36.0, 49.0, 64.0, 81.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
 }
