@@ -50,4 +50,34 @@ public class FirstClassForArrayMethods {
         }
         return array;
     }
+
+    public double[] getSolvingTheQuadraticEquation(double a, double b, double c) {
+        if (a == 0) {
+            return new double[]{-c / b};
+        }
+        if (b == 0) {
+            double result = -c / a;
+            if (result < 0) {
+                return new double[]{};
+            } else {
+                return new double[]{-Math.sqrt(result), Math.sqrt(result)};
+            }
+        }
+        if (c == 0) {
+            double result = -b / a;
+            if (result < 0) {
+                return new double[]{result, 0};
+            } else {
+                return new double[]{0, result};
+            }
+        }
+        double discriminant = b * b - 4 * a * c;
+        if (discriminant < 0) return new double[]{};
+        if (discriminant == 0) return new double[]{-b / (2 * a)};
+        double firstX = (-b + Math.sqrt(discriminant)) / (2 * a);
+        double secondX = (-b - Math.sqrt(discriminant)) / (2 * a);
+        if (firstX == secondX) return new double[]{firstX};
+        if (secondX < firstX) return new double[]{secondX, firstX};
+        return new double[]{firstX, secondX};
+    }
 }
