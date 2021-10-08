@@ -113,4 +113,12 @@ public class FirstClassForArrayMethodsTest {
         for (int i = 0; i < 7; i++)
             Assert.assertEquals(array[i], knownArray[i], 0.00001);
     }
+
+    @Test
+    public void testGetArrayOIntegerDivisors() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOIntegerDivisors(100);
+        double[] knownArray = {1.0, 2.0, 4.0, 5.0, 10.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
 }

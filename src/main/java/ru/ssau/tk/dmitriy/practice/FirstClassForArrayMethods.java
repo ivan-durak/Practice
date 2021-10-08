@@ -1,11 +1,6 @@
 package ru.ssau.tk.dmitriy.practice;
 
 public class FirstClassForArrayMethods {
-    public static void main(String[] args) {
-        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
-        double[] array = object.getArrayOfGeometricProgression(6, 500, 0.1);
-        for (int i = 0; i < 5; i++) System.out.println(array[i]);
-    }
 
     public double[] createArrayWithDimension(int dimension) {
         return new double[dimension];
@@ -113,6 +108,22 @@ public class FirstClassForArrayMethods {
         array[0] = firstElement;
         for (int i = 1; i < dimension; i++) {
             array[i] = firstElement * Math.pow(denominator, i);
+        }
+        return array;
+    }
+
+    public double[] getArrayOIntegerDivisors(double number) {
+        int numberOfDivisors = 0;
+        for (int i = 1; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) numberOfDivisors++;
+        }
+        if (numberOfDivisors == 0) return null;
+        double[] array = new double[numberOfDivisors];
+        int j = 0;
+        for (int i = 1; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                array[j++] = i;
+            }
         }
         return array;
     }
