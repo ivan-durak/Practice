@@ -96,4 +96,12 @@ public class FirstClassForArrayMethodsTest {
         double[] knownArray = {1.0, 2.0, 4.0, 5.0, 7.0, 8.0, 10.0, 11.0, 13.0, 14.0};
         Assert.assertTrue(Arrays.equals(array, knownArray));
     }
+
+    @Test
+    public void testGetArrayOfArithmeticProgression() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOfArithmeticProgression(10, -20, 3);
+        double[] knownArray = {-20.0, -17.0, -14.0, -11.0, -8.0, -5.0, -2.0, 1.0, 4.0, 7.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
 }

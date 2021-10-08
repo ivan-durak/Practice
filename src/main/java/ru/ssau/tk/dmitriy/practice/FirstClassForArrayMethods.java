@@ -93,4 +93,13 @@ public class FirstClassForArrayMethods {
         }
         return array;
     }
+
+    public double[] getArrayOfArithmeticProgression(int dimension, double firstElement, double difference) {
+        double[] array = new double[dimension];
+        array[0] = firstElement;
+        for (int i = 1; i < dimension; i++) {
+            array[i] = firstElement + difference * i;
+        }
+        return array;
+    }
 }
