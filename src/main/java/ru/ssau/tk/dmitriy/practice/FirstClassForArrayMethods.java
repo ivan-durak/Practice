@@ -127,4 +127,31 @@ public class FirstClassForArrayMethods {
         }
         return array;
     }
+
+    public double[] getArrayOfPositivePrimes(double number) {
+        int numberOfPositivePrimes = 0;
+        for (int i = 2; i <= number; i++) {
+            boolean isSimple = true;
+            for (int j = 2; j < i; j++) {
+                if ((i % j) != 0) {
+                    continue;
+                }
+                isSimple = false;
+            }
+            if (isSimple) numberOfPositivePrimes++;
+        }
+        double[] array = new double[numberOfPositivePrimes];
+        int index = 0;
+        for (int i = 2; i <= number; i++) {
+            boolean isSimple = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j != 0) {
+                    continue;
+                }
+                isSimple = false;
+            }
+            if (isSimple) array[index++] = i;
+        }
+        return array;
+    }
 }

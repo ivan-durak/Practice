@@ -121,4 +121,12 @@ public class FirstClassForArrayMethodsTest {
         double[] knownArray = {1.0, 2.0, 4.0, 5.0, 10.0};
         Assert.assertTrue(Arrays.equals(array, knownArray));
     }
+
+    @Test
+    public void testGetArrayOfPositivePrimes() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOfPositivePrimes(50);
+        double[] knownArray = {2.0, 3.0, 5.0, 7.0, 11.0, 13.0, 17.0, 19.0, 23.0, 29.0, 31.0, 37.0, 41.0, 43.0, 47.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
 }
