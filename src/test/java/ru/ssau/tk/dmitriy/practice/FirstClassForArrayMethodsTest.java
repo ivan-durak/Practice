@@ -88,4 +88,12 @@ public class FirstClassForArrayMethodsTest {
             Assert.assertEquals(eighthSolution[i], eighthKnownArray[i], 0.00001);
         }
     }
+
+    @Test
+    public void testGetArrayOfNaturalNumbersNotDivisibleBy3() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = object.getArrayOfNaturalNumbersNotDivisibleBy3(10);
+        double[] knownArray = {1.0, 2.0, 4.0, 5.0, 7.0, 8.0, 10.0, 11.0, 13.0, 14.0};
+        Assert.assertTrue(Arrays.equals(array, knownArray));
+    }
 }

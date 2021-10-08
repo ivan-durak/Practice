@@ -80,4 +80,17 @@ public class FirstClassForArrayMethods {
         if (secondX < firstX) return new double[]{secondX, firstX};
         return new double[]{firstX, secondX};
     }
+
+    public double[] getArrayOfNaturalNumbersNotDivisibleBy3(int dimension) {
+        double[] array = new double[dimension];
+        int help = 0;
+        for (int i = 0; array[dimension - 1] == 0; i++) {
+            if (i % 3 == 0) {
+                help++;
+                continue;
+            }
+            array[i - help] = i;
+        }
+        return array;
+    }
 }
