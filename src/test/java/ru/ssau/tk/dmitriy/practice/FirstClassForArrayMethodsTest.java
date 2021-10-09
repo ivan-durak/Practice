@@ -140,4 +140,12 @@ public class FirstClassForArrayMethodsTest {
         knownArray = new double[]{1.0, 2.0, 3.0, 4.0, 4.0, 3.0, 2.0, 1.0};
         Assert.assertTrue(Arrays.equals(array, knownArray));
     }
+
+    @Test
+    public void testGetArrayOfElementsWithOppositeSigns() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = {-10.0, 2.0, 3.0, -25.0, 7.0};
+        object.getArrayOfElementsWithOppositeSigns(array);
+        Assert.assertTrue(Arrays.equals(array, new double[]{10.0, -2.0, -3.0, 25.0, -7.0}));
+    }
 }
