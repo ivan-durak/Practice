@@ -156,4 +156,13 @@ public class FirstClassForArrayMethodsTest {
         Assert.assertTrue(object.isNumberInTheArray(array, 30.5));
         Assert.assertFalse(object.isNumberInTheArray(array, 10));
     }
+
+    @Test
+    public void testisNullInTheArray() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        Integer[] array = {1, 3, 6, 34, 78, 30, null};
+        Assert.assertTrue(object.isNullInTheArray(array));
+        array = new Integer[]{3, 2, 5, 7, 89};
+        Assert.assertFalse(object.isNullInTheArray(array));
+    }
 }
