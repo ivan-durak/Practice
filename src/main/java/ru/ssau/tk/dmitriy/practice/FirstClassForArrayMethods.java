@@ -154,4 +154,19 @@ public class FirstClassForArrayMethods {
         }
         return array;
     }
+
+    public double[] getSymmetricalArray(int dimension) {
+        double[] array = new double[dimension];
+        int index;
+        if (dimension % 2 != 0) {
+            index = (dimension / 2) + 1;
+        } else {
+            index = dimension / 2;
+        }
+        for (int i = 1; i <= index; i++) {
+            array[i - 1] = i;
+            array[dimension - i] = i;
+        }
+        return array;
+    }
 }
