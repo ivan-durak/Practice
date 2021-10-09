@@ -1,6 +1,11 @@
 package ru.ssau.tk.dmitriy.practice;
 
 public class FirstClassForArrayMethods {
+    public static void main(String[] args) {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = {1, 2.5, 3.4, 3.9, 10, 20.7, 3};
+        System.out.println(object.isNumberInTheArray(array, 3.1));
+    }
 
     public double[] createArrayWithDimension(int dimension) {
         return new double[dimension];
@@ -174,5 +179,16 @@ public class FirstClassForArrayMethods {
         for (int i = 0; i < array.length; i++) {
             array[i] *= (-1);
         }
+    }
+
+    public boolean isNumberInTheArray(double[] array, double number) {
+        boolean result = false;
+        for (double x : array) {
+            if (x == number) {
+                result = true;
+                break;
+            }
+        }
+        return result;
     }
 }

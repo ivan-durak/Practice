@@ -148,4 +148,12 @@ public class FirstClassForArrayMethodsTest {
         object.getArrayOfElementsWithOppositeSigns(array);
         Assert.assertTrue(Arrays.equals(array, new double[]{10.0, -2.0, -3.0, 25.0, -7.0}));
     }
+
+    @Test
+    public void testisNumberInTheArray() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = {1.0, 2.0, 30.5, 23.0, 48.9, -1.0, 9.2, -3};
+        Assert.assertTrue(object.isNumberInTheArray(array, 30.5));
+        Assert.assertFalse(object.isNumberInTheArray(array, 10));
+    }
 }
