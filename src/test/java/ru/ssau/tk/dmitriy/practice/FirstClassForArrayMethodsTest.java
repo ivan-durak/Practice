@@ -172,4 +172,11 @@ public class FirstClassForArrayMethodsTest {
         double[] knownArray = {1, 4, 6, 8, 11, 12, 45, 32, 67, 88, 9, 24, 58};
         Assert.assertEquals(object.getNumberOfEvenNumbersInArray(knownArray), 8);
     }
+
+    @Test
+    public void testGetMaximalElementInArray() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] knownArray = {23, 45, 61, 54, 78, 90, 432, 123, 456, 789, 20, 654};
+        Assert.assertEquals(object.getMaximalElementInArray(knownArray), 789.0);
+    }
 }

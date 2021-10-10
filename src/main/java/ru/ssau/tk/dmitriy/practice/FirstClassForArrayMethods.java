@@ -207,4 +207,14 @@ public class FirstClassForArrayMethods {
         }
         return numberOfEvenNumbers;
     }
+
+    public double getMaximalElementInArray(double[] array) {
+        double maxElement = array[0];
+        for (double v : array) {
+            if (maxElement < v) {
+                maxElement = v;
+            }
+        }
+        return maxElement;
+    }
 }
