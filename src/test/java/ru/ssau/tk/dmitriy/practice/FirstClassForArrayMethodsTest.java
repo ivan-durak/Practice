@@ -178,5 +178,14 @@ public class FirstClassForArrayMethodsTest {
         FirstClassForArrayMethods object = new FirstClassForArrayMethods();
         double[] knownArray = {23, 45, 61, 54, 78, 90, 432, 123, 456, 789, 20, 654};
         Assert.assertEquals(object.getMaximalElementInArray(knownArray), 789.0);
+        knownArray = new double[]{};
+        Assert.assertNull(object.getMaximalElementInArray(knownArray), null);
+    }
+
+    @Test
+    public void testGetSumOfNumbersWithEvenIndexes() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] knownArray = {12, 34, 52, 41, 67, 80, 97, 57, 24, 689, 12};
+        Assert.assertEquals(object.getSumOfNumbersWithEvenIndexes(knownArray), 264.0);
     }
 }

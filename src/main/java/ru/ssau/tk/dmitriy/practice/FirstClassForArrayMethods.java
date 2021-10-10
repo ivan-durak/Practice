@@ -208,7 +208,10 @@ public class FirstClassForArrayMethods {
         return numberOfEvenNumbers;
     }
 
-    public double getMaximalElementInArray(double[] array) {
+    public Object getMaximalElementInArray(double[] array) {
+        if (array.length == 0) {
+            return null;
+        }
         double maxElement = array[0];
         for (double v : array) {
             if (maxElement < v) {
@@ -216,5 +219,15 @@ public class FirstClassForArrayMethods {
             }
         }
         return maxElement;
+    }
+
+    public double getSumOfNumbersWithEvenIndexes(double[] array) {
+        double sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 0) {
+                sum += array[i];
+            }
+        }
+        return sum;
     }
 }
