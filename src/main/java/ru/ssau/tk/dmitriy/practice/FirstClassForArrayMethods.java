@@ -230,4 +230,17 @@ public class FirstClassForArrayMethods {
         }
         return sum;
     }
+
+    public boolean whoHasTheMostDivisible(double[] array) {
+        int divisibleByFirstElement = 0, divisibleByLastElement = 0;
+        for (double v : array) {
+            if (v % array[0] == 0) {
+                divisibleByFirstElement++;
+            }
+            if (v % array[array.length - 1] == 0) {
+                divisibleByLastElement++;
+            }
+        }
+        return divisibleByFirstElement > divisibleByLastElement;
+    }
 }

@@ -188,4 +188,13 @@ public class FirstClassForArrayMethodsTest {
         double[] knownArray = {12, 34, 52, 41, 67, 80, 97, 57, 24, 689, 12};
         Assert.assertEquals(object.getSumOfNumbersWithEvenIndexes(knownArray), 264.0);
     }
+
+    @Test
+    public void testWhoHasTheMostDivisible() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] knownArray = {2, 5, 6, 8, 10, 12, 15, 21, 22, 56, 78, 99, 3};
+        Assert.assertTrue(object.whoHasTheMostDivisible(knownArray));
+        knownArray = new double[]{4, 8, 9, 12, 18, 45, 33, 12, 60, 24, 54, 3};
+        Assert.assertFalse(object.whoHasTheMostDivisible(knownArray));
+    }
 }
