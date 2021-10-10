@@ -197,4 +197,14 @@ public class FirstClassForArrayMethods {
         }
         return result;
     }
+
+    public int getNumberOfEvenNumbersInArray(double[] array) {
+        int numberOfEvenNumbers = 0;
+        for (double element : array) {
+            if (element % 2 == 0) {
+                numberOfEvenNumbers++;
+            }
+        }
+        return numberOfEvenNumbers;
+    }
 }

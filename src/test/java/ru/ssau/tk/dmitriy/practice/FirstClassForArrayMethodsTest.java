@@ -165,4 +165,11 @@ public class FirstClassForArrayMethodsTest {
         array = new Integer[]{3, 2, 5, 7, 89};
         Assert.assertFalse(object.isNullInTheArray(array));
     }
+
+    @Test
+    public void testGetNumberOfEvenNumbersInArray() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] knownArray = {1, 4, 6, 8, 11, 12, 45, 32, 67, 88, 9, 24, 58};
+        Assert.assertEquals(object.getNumberOfEvenNumbersInArray(knownArray), 8);
+    }
 }
