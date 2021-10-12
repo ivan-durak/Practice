@@ -302,6 +302,23 @@ public class FirstClassForArrayMethods {
                 break;
             }
         }
-        return  help;
+        return help;
+    }
+
+    public void oppositeTheMaxAndMinElements(double[] array) {
+        double maxElement = array[0], minElement = array[0];
+        int maxIndex = 0, minIndex = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxElement) {
+                maxElement = array[i];
+                maxIndex = i;
+            }
+            if (array[i] < minElement) {
+                minElement = array[i];
+                minIndex = i;
+            }
+        }
+        array[minIndex] = maxElement;
+        array[maxIndex] = minElement;
     }
 }

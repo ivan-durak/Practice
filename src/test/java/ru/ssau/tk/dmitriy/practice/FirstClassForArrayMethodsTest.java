@@ -213,4 +213,15 @@ public class FirstClassForArrayMethodsTest {
         double[] array = {1, 2, 3, 4, 5, 6, 4, 3, 7, 8, 3, 2, 5, 9, 10, 11, 4, 8, 9};
         Assert.assertEquals(object.getFirstIndexOfNumber(array, 9), 13);
     }
+
+    @Test
+    public void testOppositeTheMaxAndMinElements() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = {1, 3, 5, 7, 9, -12, 2, 6, 4, 20, 10, 15, -25};
+        Assert.assertEquals(array[9], 20.0);
+        Assert.assertEquals(array[12], -25.0);
+        object.oppositeTheMaxAndMinElements(array);
+        Assert.assertEquals(array[9], -25.0);
+        Assert.assertEquals(array[12], 20.0);
+    }
 }
