@@ -293,4 +293,15 @@ public class FirstClassForArrayMethods {
         }
         return help;
     }
+
+    public int getFirstIndexOfNumber(double[] array, double number) {
+        int help = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                help = i;
+                break;
+            }
+        }
+        return  help;
+    }
 }
