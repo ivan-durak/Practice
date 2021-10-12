@@ -243,4 +243,54 @@ public class FirstClassForArrayMethods {
         }
         return divisibleByFirstElement > divisibleByLastElement;
     }
+
+    public double theNumberThatRepeats(double[] array) {
+        double[] duplicateNumbers = new double[1];
+        double[] numberOfRepetitions = new double[1];
+        int index = 0; //по нему определяем длину верхних массивов
+        for (int i = 0; i < array.length; i++) { //опорный элемент
+            for (int j = array.length - 1; j > i; j--) { //сравниваемый элемент с конца
+                if (array[i] == array[j]) { //элементы равны
+                    if (i > getIndexOfDuplicateNumber(array[i], array)) {
+                        continue;
+                    } else if (isInTheArrayOfDuplicateNumbers(array[i], duplicateNumbers)) { //элемент уже содержится в массиве повторяющихся значений
+                        numberOfRepetitions[getIndexOfDuplicateNumber(array[i], duplicateNumbers)]++;
+                    } else { //не содержится
+                        double[] newDuplicateNumbers = new double[duplicateNumbers.length + 1];
+                        double[] newNumberOfRepetitions = new double[numberOfRepetitions.length + 1];
+                        System.arraycopy(duplicateNumbers, 0, newDuplicateNumbers, 0, duplicateNumbers.length);
+                        System.arraycopy(numberOfRepetitions, 0, newNumberOfRepetitions, 0, numberOfRepetitions.length);
+                        duplicateNumbers = newDuplicateNumbers;
+                        numberOfRepetitions = newNumberOfRepetitions;
+                        duplicateNumbers[index] = array[i];
+                        numberOfRepetitions[index]++;
+                        index++;
+                    }
+                }
+            }
+        }
+        return duplicateNumbers[0];
+    }
+
+    private boolean isInTheArrayOfDuplicateNumbers(double x, double[] array) { //для метода theNumberThatRepeats()
+        boolean result = false;
+        for (double element : array) {
+            if (x == element) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+    private int getIndexOfDuplicateNumber(double x, double[] array) { //для метода theNumberThatRepeats()
+        int help = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (x == array[i]) {
+                help = i;
+                break;
+            }
+        }
+        return help;
+    }
 }

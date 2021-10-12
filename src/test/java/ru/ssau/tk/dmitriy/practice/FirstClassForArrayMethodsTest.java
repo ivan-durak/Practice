@@ -197,4 +197,13 @@ public class FirstClassForArrayMethodsTest {
         knownArray = new double[]{4, 8, 9, 12, 18, 45, 33, 12, 60, 24, 54, 3};
         Assert.assertFalse(object.whoHasTheMostDivisible(knownArray));
     }
+
+    @Test
+    public void testTheNumberThatRepeats() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = {1, 2, 3, 2, 5, 2, 6, 2, 7, 2, 8, 2, 9};//одно повторяющееся число
+        Assert.assertEquals(object.theNumberThatRepeats(array), 2.0);
+        array = new double[]{1, 3, 4, 5, 3, 2, 3, 6, 2, 5, 7, 3, 2, 8, 9, 12, 3, 2}; //несколько повторяющихся чисел
+        Assert.assertEquals(object.theNumberThatRepeats(array), 3.0);
+    }
 }
