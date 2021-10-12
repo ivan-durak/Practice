@@ -224,4 +224,15 @@ public class FirstClassForArrayMethodsTest {
         Assert.assertEquals(array[9], -25.0);
         Assert.assertEquals(array[12], 20.0);
     }
+
+    @Test
+    public void testBitwiseNegation() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        int[] array = {1, 4, 7, 13};
+        Assert.assertTrue(Arrays.equals(array, new int[]{1, 4, 7, 13}));
+        object.bitwiseNegation(array);
+        Assert.assertTrue(Arrays.equals(array, new int[]{-2, -5, -8, -14}));
+        object.bitwiseNegation(array);
+        Assert.assertTrue(Arrays.equals(array, new int[]{1, 4, 7, 13}));
+    }
 }
