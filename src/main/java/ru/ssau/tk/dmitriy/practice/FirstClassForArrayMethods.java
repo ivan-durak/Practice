@@ -352,4 +352,14 @@ public class FirstClassForArrayMethods {
         }
         return outPutArray;
     }
+
+    public boolean[] areElementsInArrayEven(int[] array) {
+        boolean[] outPutArray = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                outPutArray[i] = true;
+            }
+        }
+        return outPutArray;
+    }
 }

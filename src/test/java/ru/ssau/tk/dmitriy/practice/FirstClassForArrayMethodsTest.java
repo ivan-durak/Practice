@@ -252,4 +252,11 @@ public class FirstClassForArrayMethodsTest {
         array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         Assert.assertEquals(object.getArrayOfSumOfNeighboringNumbers(array), new int[]{3, 7, 11, 15, 19});
     }
+
+    @Test
+    public void testAreElementsInArrayEven() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        int[] array = {2, 22, 3, 33, 11, 45, 6, 89, 100};
+        Assert.assertEquals(object.areElementsInArrayEven(array), new boolean[]{true, true, false, false, false, false, true, false, true});
+    }
 }
