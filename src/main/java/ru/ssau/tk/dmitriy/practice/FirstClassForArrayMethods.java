@@ -337,4 +337,19 @@ public class FirstClassForArrayMethods {
         }
         return newArray;
     }
+
+    public int[] getArrayOfSumOfNeighboringNumbers(int[] array) {
+        int[] outPutArray = new int[(array.length / 2) + (array.length % 2)];
+        if (array.length % 2 == 0) {
+            for (int i = 0; i < outPutArray.length; i++) {
+                outPutArray[i] = array[2 * i] + array[2 * i + 1];
+            }
+        } else {
+            for (int i = 0; i < outPutArray.length - 1; i++) {
+                outPutArray[i] = array[2 * i] + array[2 * i + 1];
+            }
+            outPutArray[outPutArray.length - 1] = array[array.length - 1];
+        }
+        return outPutArray;
+    }
 }

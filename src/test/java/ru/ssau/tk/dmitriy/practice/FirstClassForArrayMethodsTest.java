@@ -243,4 +243,13 @@ public class FirstClassForArrayMethodsTest {
         Assert.assertEquals(object.getArrayOfNegativeNumbers(array), new int[]{-24, -46, -80, -101});
         Assert.assertEquals(object.getArrayOfNegativeNumbers(object.getArrayOfNegativeNumbers(array)), array);
     }
+
+    @Test
+    public void testGetArrayOfSumOfNeighboringNumbers() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        int[] array = {1, 3, 5, 7, 9, 2, 4, 6, 8};
+        Assert.assertEquals(object.getArrayOfSumOfNeighboringNumbers(array), new int[]{4, 12, 11, 10, 8});
+        array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        Assert.assertEquals(object.getArrayOfSumOfNeighboringNumbers(array), new int[]{3, 7, 11, 15, 19});
+    }
 }
