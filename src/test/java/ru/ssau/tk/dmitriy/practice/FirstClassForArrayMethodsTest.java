@@ -235,4 +235,12 @@ public class FirstClassForArrayMethodsTest {
         object.bitwiseNegation(array);
         Assert.assertTrue(Arrays.equals(array, new int[]{1, 4, 7, 13}));
     }
+
+    @Test
+    public void testGetArrayOfNegativeNumbers() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        int[] array = {23, 45, 79, 100};
+        Assert.assertEquals(object.getArrayOfNegativeNumbers(array), new int[]{-24, -46, -80, -101});
+        Assert.assertEquals(object.getArrayOfNegativeNumbers(object.getArrayOfNegativeNumbers(array)), array);
+    }
 }

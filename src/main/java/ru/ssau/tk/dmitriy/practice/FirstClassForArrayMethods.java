@@ -1,5 +1,7 @@
 package ru.ssau.tk.dmitriy.practice;
 
+import java.util.Arrays;
+
 public class FirstClassForArrayMethods {
 
     public double[] createArrayWithDimension(int dimension) {
@@ -326,5 +328,13 @@ public class FirstClassForArrayMethods {
         for (int i = 0; i < array.length; i++) {
             array[i] = ~array[i];
         }
+    }
+
+    public int[] getArrayOfNegativeNumbers(int[] array) {
+        int[] newArray = Arrays.copyOf(array, array.length);
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = ~newArray[i];
+        }
+        return newArray;
     }
 }
