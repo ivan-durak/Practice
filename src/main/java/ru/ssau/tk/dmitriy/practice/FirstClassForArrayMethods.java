@@ -362,4 +362,11 @@ public class FirstClassForArrayMethods {
         }
         return outPutArray;
     }
+
+    public int[] divideANumberOfTypeLong(long number) {
+        int[] bytesOfLongNumber = new int[2];
+        bytesOfLongNumber[0] = (int) (number >>> 32);
+        bytesOfLongNumber[1] = (int) number;
+        return bytesOfLongNumber;
+    }
 }

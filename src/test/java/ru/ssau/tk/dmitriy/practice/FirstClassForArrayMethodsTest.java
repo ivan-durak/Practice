@@ -259,4 +259,13 @@ public class FirstClassForArrayMethodsTest {
         int[] array = {2, 22, 3, 33, 11, 45, 6, 89, 100};
         Assert.assertEquals(object.areElementsInArrayEven(array), new boolean[]{true, true, false, false, false, false, true, false, true});
     }
+
+    @Test
+    public void testDivideANumberOfTypeLong() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        long number = 2233203684788L;
+        int[] digit= object.divideANumberOfTypeLong(number);
+        Assert.assertEquals(digit[0],519);
+        Assert.assertEquals(digit[1],(int) 2233203684788L);
+    }
 }
