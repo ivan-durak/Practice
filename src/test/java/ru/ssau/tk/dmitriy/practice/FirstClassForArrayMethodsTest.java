@@ -261,11 +261,12 @@ public class FirstClassForArrayMethodsTest {
     }
 
     @Test
-    public void testDivideANumberOfTypeLong() {
+    public void testDivideANumberOfTypeLongAndGetANumberOfTypeLong() {
         FirstClassForArrayMethods object = new FirstClassForArrayMethods();
-        long number = 2233203684788L;
-        int[] digit= object.divideANumberOfTypeLong(number);
-        Assert.assertEquals(digit[0],519);
-        Assert.assertEquals(digit[1],(int) 2233203684788L);
+        long number = 13315684788L;
+        int[] digit = object.divideANumberOfTypeLong(number);
+        Assert.assertEquals(digit[0], 3);
+        Assert.assertEquals(digit[1], 430782900);
+        Assert.assertEquals(object.getANumberOfTypeLong(3, 430782900), 13315684788L);
     }
 }

@@ -369,4 +369,8 @@ public class FirstClassForArrayMethods {
         bytesOfLongNumber[1] = (int) number;
         return bytesOfLongNumber;
     }
+
+    public long getANumberOfTypeLong(int firstNumber, int secondNumber) {
+        return (((long) firstNumber << 32) | (long) secondNumber);
+    }
 }
