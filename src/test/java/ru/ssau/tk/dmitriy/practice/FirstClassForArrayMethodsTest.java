@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.concurrent.ForkJoinPool;
 
 import static org.testng.Assert.*;
 
@@ -285,5 +286,16 @@ public class FirstClassForArrayMethodsTest {
         array = object.getTwoDimensionalArrayNonRepeatingNumbers(1);
         Assert.assertTrue(Arrays.deepEquals(array, new int[][]{{1}}));
         Assert.assertNull(object.getTwoDimensionalArrayNonRepeatingNumbers(0));
+    }
+
+    @Test
+    public void testCheckingForNaN() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        double[] array = {3, 5, 6, 12, 32, 45, 0, 78, Double.NaN, 12, 45, 67};
+        object.checkingForNaN(array);
+        Assert.assertTrue(Arrays.equals(array, new double[]{3, 5, 6, 12, 32, 45, 0, 78, Double.NaN, 12, 45, 67}));
+        array = new double[]{2, 4, 5, 8, 9, 12, 3, 21, 43, 57, 0, 6, 90, 7};
+        object.checkingForNaN(array);
+        Assert.assertTrue(Arrays.equals(array, new double[]{0, 2, 3, 4, 5, 6, 7, 8, 9, 12, 21, 43, 57, 90}));
     }
 }

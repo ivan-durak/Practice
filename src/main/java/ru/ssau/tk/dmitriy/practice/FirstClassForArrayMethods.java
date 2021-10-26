@@ -3,16 +3,6 @@ package ru.ssau.tk.dmitriy.practice;
 import java.util.Arrays;
 
 public class FirstClassForArrayMethods {
-    public static void main(String[] args) {
-        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
-        int[][] array = object.getTwoDimensionalArrayNonRepeatingNumbers(9);
-        for (int[] element : array) {
-            for (int element2 : element) {
-                System.out.print(element2 + " ");
-            }
-            System.out.println();
-        }
-    }
 
     public double[] createArrayWithDimension(int dimension) {
         return new double[dimension];
@@ -405,5 +395,18 @@ public class FirstClassForArrayMethods {
             }
         }
         return array;
+    }
+
+    public void checkingForNaN(double[] array) {
+        boolean isThereANaN = false;
+        for (double element : array) {
+            if (Double.isNaN(element)) {
+                isThereANaN = true;
+                break;
+            }
+        }
+        if (!isThereANaN) {
+            Arrays.sort(array);
+        }
     }
 }
