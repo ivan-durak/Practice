@@ -269,4 +269,11 @@ public class FirstClassForArrayMethodsTest {
         Assert.assertEquals(digit[1], 430782900);
         Assert.assertEquals(object.getANumberOfTypeLong(3, 430782900), 13315684788L);
     }
+
+    @Test
+    public void testFillTheArrayWithASpecificIndex() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        Assert.assertEquals(object.fillTheArrayWithASpecificIndex(9, 6), new int[]{4, 5, 6, 7, 8, 9, 1, 2, 3});
+        Assert.assertEquals(object.fillTheArrayWithASpecificIndex(6, 2), new int[]{5, 6, 1, 2, 3, 4});
+    }
 }

@@ -373,4 +373,12 @@ public class FirstClassForArrayMethods {
     public long getANumberOfTypeLong(int firstNumber, int secondNumber) {
         return (((long) firstNumber << 32) | (long) secondNumber);
     }
+
+    public int[] fillTheArrayWithASpecificIndex(int dimension, int startIndex) {
+        int[] array = new int[dimension];
+        for (int i = 0; i < dimension; i++) {
+            array[i] = i + (dimension - (startIndex - 1)) - (i < startIndex ? 0 : dimension);
+        }
+        return array;
+    }
 }
