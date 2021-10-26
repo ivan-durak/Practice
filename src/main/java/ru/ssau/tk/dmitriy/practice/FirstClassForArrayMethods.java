@@ -3,6 +3,16 @@ package ru.ssau.tk.dmitriy.practice;
 import java.util.Arrays;
 
 public class FirstClassForArrayMethods {
+    public static void main(String[] args) {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        int[][] array = object.getTwoDimensionalArrayNonRepeatingNumbers(9);
+        for (int[] element : array) {
+            for (int element2 : element) {
+                System.out.print(element2 + " ");
+            }
+            System.out.println();
+        }
+    }
 
     public double[] createArrayWithDimension(int dimension) {
         return new double[dimension];
@@ -378,6 +388,21 @@ public class FirstClassForArrayMethods {
         int[] array = new int[dimension];
         for (int i = 0; i < dimension; i++) {
             array[i] = i + (dimension - (startIndex - 1)) - (i < startIndex ? 0 : dimension);
+        }
+        return array;
+    }
+
+    public int[][] getTwoDimensionalArrayNonRepeatingNumbers(int dimension) {
+        if (dimension == 0) {
+            return null;
+        }
+        int[][] array = new int[dimension][];
+        int value = 1;
+        for (int i = 0; i < dimension; i++) {
+            array[i] = new int[dimension - i];
+            for (int j = 0; j < array[i].length; j++) {
+                array[i][j] = value++;
+            }
         }
         return array;
     }

@@ -276,4 +276,14 @@ public class FirstClassForArrayMethodsTest {
         Assert.assertEquals(object.fillTheArrayWithASpecificIndex(9, 6), new int[]{4, 5, 6, 7, 8, 9, 1, 2, 3});
         Assert.assertEquals(object.fillTheArrayWithASpecificIndex(6, 2), new int[]{5, 6, 1, 2, 3, 4});
     }
+
+    @Test
+    public void testGetTwoDimensionalArrayNonRepeatingNumbers() {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        int[][] array = object.getTwoDimensionalArrayNonRepeatingNumbers(3);
+        Assert.assertTrue(Arrays.deepEquals(array, new int[][]{{1, 2, 3}, {4, 5}, {6}}));
+        array = object.getTwoDimensionalArrayNonRepeatingNumbers(1);
+        Assert.assertTrue(Arrays.deepEquals(array, new int[][]{{1}}));
+        Assert.assertNull(object.getTwoDimensionalArrayNonRepeatingNumbers(0));
+    }
 }
