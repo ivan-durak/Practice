@@ -3,6 +3,11 @@ package ru.ssau.tk.dmitriy.practice;
 import java.util.Arrays;
 
 public class FirstClassForArrayMethods {
+    public static void main(String[] args) {
+        FirstClassForArrayMethods object = new FirstClassForArrayMethods();
+        String[] array = {"ООП", "Наследование", "Полиморфизм", "Инкапсуляция", "Дженерик"};
+        object.printingAnArrayOfStrings(array);
+    }
 
     public double[] createArrayWithDimension(int dimension) {
         return new double[dimension];
@@ -407,6 +412,12 @@ public class FirstClassForArrayMethods {
         }
         if (!isThereANaN) {
             Arrays.sort(array);
+        }
+    }
+
+    public void printingAnArrayOfStrings(String[] array) {
+        for (String string : array) {
+            System.out.println(string);
         }
     }
 }
