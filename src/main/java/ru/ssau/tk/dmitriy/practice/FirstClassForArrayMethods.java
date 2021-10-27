@@ -420,4 +420,14 @@ public class FirstClassForArrayMethods {
             System.out.println(string);
         }
     }
+
+    public double theProductOfTheArrayNumbers(double[] array) {
+        double theProduct = 1;
+        for (double element : array) {
+            if ((element != Double.POSITIVE_INFINITY) && (element != Double.NEGATIVE_INFINITY) && (!Double.isNaN(element))) {
+                theProduct *= element;
+            }
+        }
+        return theProduct;
+    }
 }
