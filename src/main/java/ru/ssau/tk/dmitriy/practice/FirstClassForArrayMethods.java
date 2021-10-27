@@ -7,6 +7,8 @@ public class FirstClassForArrayMethods {
         FirstClassForArrayMethods object = new FirstClassForArrayMethods();
         String[] array = {"ООП", "Наследование", "Полиморфизм", "Инкапсуляция", "Дженерик"};
         object.printingAnArrayOfStrings(array);
+        int[] array1 = {2, 4, 6, 8, 90, 24, 35, 67, 364, 5635, 9047};
+        object.hexadecimalTypeOfNumber(array1);
     }
 
     public double[] createArrayWithDimension(int dimension) {
@@ -429,5 +431,9 @@ public class FirstClassForArrayMethods {
             }
         }
         return theProduct;
+    }
+
+    public void hexadecimalTypeOfNumber(int[] array) {
+        Arrays.stream(array).forEach((i) -> System.out.println(Integer.toHexString(i)));
     }
 }
