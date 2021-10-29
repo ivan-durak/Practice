@@ -7,4 +7,11 @@ public class ClassForStringMethods {
             System.out.println(string.charAt(i));
         }
     }
+
+    public void bytesOfTheStringInTheConsole(String string) {
+        byte[] bytesOfString = string.getBytes();
+        for (byte b : bytesOfString) {
+            System.out.println(b);
+        }
+    }
 }
