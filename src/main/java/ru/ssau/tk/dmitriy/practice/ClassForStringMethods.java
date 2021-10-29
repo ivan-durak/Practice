@@ -1,6 +1,10 @@
 package ru.ssau.tk.dmitriy.practice;
 
 public class ClassForStringMethods {
+    public static void main(String[] args) {
+        ClassForStringMethods object = new ClassForStringMethods();
+        object.studyingCharacterEscaping();
+    }
 
     public void stringCharactersInTheConsole(String string) {
         for (int i = 0; i < string.length(); i++) {
@@ -38,5 +42,16 @@ public class ClassForStringMethods {
             return false;
         }
         return ((firstString.equals(secondString)) || (firstString.equalsIgnoreCase(secondString)));
+    }
+
+    public void studyingCharacterEscaping() {
+        int i = 0;
+        System.out.println("Символ\t№" + ++i);
+        System.out.println("Символ\b№" + ++i);
+        System.out.println("Символ\n№" + ++i);
+        System.out.println("Символ\r№" + ++i);
+        System.out.println("Символ\'№" + ++i);
+        System.out.println("Символ\"№" + ++i);
+        System.out.println("Символ\\№" + ++i);
     }
 }
