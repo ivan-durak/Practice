@@ -16,4 +16,15 @@ public class ClassForStringMethodsTest {
         Assert.assertFalse(object.isTheStringAPalindrome(secondString));
         Assert.assertFalse(object.isTheStringAPalindrome(fourthString));
     }
+
+    @Test
+    public void testDoTheStringsDifferOnlyInCase() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        Assert.assertTrue(object.doTheStringsDifferOnlyInCase("EpSILoNN", "EpsilonN"));
+        Assert.assertTrue(object.doTheStringsDifferOnlyInCase("AlIyFa", "alIYFA"));
+        Assert.assertFalse(object.doTheStringsDifferOnlyInCase(null, null));
+        Assert.assertFalse(object.doTheStringsDifferOnlyInCase(null, "FALSe"));
+        Assert.assertFalse(object.doTheStringsDifferOnlyInCase("FAlse", null));
+        Assert.assertFalse(object.doTheStringsDifferOnlyInCase("CoNtROLL", "ShiFT"));
+    }
 }

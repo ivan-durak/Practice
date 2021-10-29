@@ -32,4 +32,11 @@ public class ClassForStringMethods {
         }
         return result;
     }
+
+    public boolean doTheStringsDifferOnlyInCase(String firstString, String secondString) {
+        if ((firstString == null) || (secondString == null)) {
+            return false;
+        }
+        return ((firstString.equals(secondString)) || (firstString.equalsIgnoreCase(secondString)));
+    }
 }
