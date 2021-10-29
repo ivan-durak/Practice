@@ -54,4 +54,8 @@ public class ClassForStringMethods {
         System.out.println("Символ\"№" + ++i);
         System.out.println("Символ\\№" + ++i);
     }
+
+    public int substringSearch(String firstString, String secondString) {
+        return firstString.indexOf(secondString);
+    }
 }

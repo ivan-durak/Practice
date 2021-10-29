@@ -27,4 +27,12 @@ public class ClassForStringMethodsTest {
         Assert.assertFalse(object.doTheStringsDifferOnlyInCase("FAlse", null));
         Assert.assertFalse(object.doTheStringsDifferOnlyInCase("CoNtROLL", "ShiFT"));
     }
+
+    @Test
+    public void testSubstringSearch() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        Assert.assertEquals(object.substringSearch("coalition", "al"), 2);
+        Assert.assertEquals(object.substringSearch("cocylka", "lka"), 4);
+        Assert.assertEquals(object.substringSearch("kilometre", "awq"), -1);
+    }
 }
