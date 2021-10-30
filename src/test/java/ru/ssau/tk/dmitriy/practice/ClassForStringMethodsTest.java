@@ -53,4 +53,13 @@ public class ClassForStringMethodsTest {
         Assert.assertEquals(object.lastIndexOfSubstringInStringInFirstHalf("Floccinaucinihilipilification", "ihi"), 12);
         Assert.assertEquals(object.lastIndexOfSubstringInStringInFirstHalf("Floccinaucinihilipilification", "zxy"), -1);
     }
+
+    @Test
+    public void testGetNumberOfLinesWithSpecifiedStartAndEnd() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        String[] array = {"asxdoktr", "asxutyopi", "gyrteopi"};
+        Assert.assertEquals(object.getNumberOfLinesWithSpecifiedStartAndEnd(array, "asx", "opi"), 1);
+        array = new String[]{"oufrtsqp", "ghutyinsqp", "ghujfoisesqp"};
+        Assert.assertEquals(object.getNumberOfLinesWithSpecifiedStartAndEnd(array, "ghu", "sqp"), 2);
+    }
 }

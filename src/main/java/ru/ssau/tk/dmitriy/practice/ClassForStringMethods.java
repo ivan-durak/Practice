@@ -66,4 +66,14 @@ public class ClassForStringMethods {
     public int lastIndexOfSubstringInStringInFirstHalf(String firstString, String secondString) {
         return firstString.lastIndexOf(secondString, (firstString.length() / 2) + 1);
     }
+
+    public int getNumberOfLinesWithSpecifiedStartAndEnd(String[] arrayString, String prefix, String postfix) {
+        int count = 0;
+        for (String string : arrayString) {
+            if (string.startsWith(prefix) && string.endsWith(postfix)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
