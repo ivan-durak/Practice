@@ -76,4 +76,16 @@ public class ClassForStringMethods {
         }
         return count;
     }
+
+    public int getNumberOfLinesWithSpecifiedStartAndEndWithoutSpaces(String[] arrayString, String prefix, String postfix) {
+        int count = 0;
+        String temp;
+        for (String string : arrayString) {
+            temp = string.trim();
+            if (temp.startsWith(prefix) && temp.endsWith(postfix)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }

@@ -62,4 +62,13 @@ public class ClassForStringMethodsTest {
         array = new String[]{"oufrtsqp", "ghutyinsqp", "ghujfoisesqp"};
         Assert.assertEquals(object.getNumberOfLinesWithSpecifiedStartAndEnd(array, "ghu", "sqp"), 2);
     }
+
+    @Test
+    public void testGetNumberOfLinesWithSpecifiedStartAndEndWithoutSpaces() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        String[] array = {" obvporfdsw ", "  ovbnfrd  ", "     ovboutydsw   "};
+        Assert.assertEquals(object.getNumberOfLinesWithSpecifiedStartAndEndWithoutSpaces(array, "ovb", "dsw"), 1);
+        array = new String[]{"  kuhlsnlob ", " kuhmksldvn  ", "   kuhfiudlob   "};
+        Assert.assertEquals(object.getNumberOfLinesWithSpecifiedStartAndEndWithoutSpaces(array, "kuh", "lob"), 2);
+    }
 }
