@@ -58,4 +58,8 @@ public class ClassForStringMethods {
     public int substringSearch(String firstString, String secondString) {
         return firstString.indexOf(secondString);
     }
+
+    public int substringSearchInTheSecondHalf(String firstString, String secondString) {
+        return firstString.indexOf(secondString, firstString.length() / 2);
+    }
 }

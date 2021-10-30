@@ -35,4 +35,13 @@ public class ClassForStringMethodsTest {
         Assert.assertEquals(object.substringSearch("cocylka", "lka"), 4);
         Assert.assertEquals(object.substringSearch("kilometre", "awq"), -1);
     }
+
+    @Test
+    public void testSubstringSearchInTheSecondHalf() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","at"),17);
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","io"),19);
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","al"),13);
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","xyz"),-1);
+    }
 }
