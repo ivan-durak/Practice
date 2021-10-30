@@ -39,9 +39,18 @@ public class ClassForStringMethodsTest {
     @Test
     public void testSubstringSearchInTheSecondHalf() {
         ClassForStringMethods object = new ClassForStringMethods();
-        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","at"),17);
-        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","io"),19);
-        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","al"),13);
-        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization","xyz"),-1);
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization", "at"), 17);
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization", "io"), 19);
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization", "al"), 13);
+        Assert.assertEquals(object.substringSearchInTheSecondHalf("deinstitutionalization", "xyz"), -1);
+    }
+
+    @Test
+    public void testLastIndexOfSubstringInStringInFirstHalf() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        Assert.assertEquals(object.lastIndexOfSubstringInStringInFirstHalf("Floccinaucinihilipilification", "oc"), 2);
+        Assert.assertEquals(object.lastIndexOfSubstringInStringInFirstHalf("Floccinaucinihilipilification", "nauc"), 6);
+        Assert.assertEquals(object.lastIndexOfSubstringInStringInFirstHalf("Floccinaucinihilipilification", "ihi"), 12);
+        Assert.assertEquals(object.lastIndexOfSubstringInStringInFirstHalf("Floccinaucinihilipilification", "zxy"), -1);
     }
 }
