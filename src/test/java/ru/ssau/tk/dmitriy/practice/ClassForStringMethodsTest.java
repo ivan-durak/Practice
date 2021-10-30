@@ -71,4 +71,13 @@ public class ClassForStringMethodsTest {
         array = new String[]{"  kuhlsnlob ", " kuhmksldvn  ", "   kuhfiudlob   "};
         Assert.assertEquals(object.getNumberOfLinesWithSpecifiedStartAndEndWithoutSpaces(array, "kuh", "lob"), 2);
     }
+
+    @Test
+    public void testReplaceAllSubstringsInString() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        String string = "dogodogoddo";
+        Assert.assertEquals(object.replaceAllSubstringsInString(string, "do", "us"), "usgousgodus");
+        string = "oboodoboboobbobobobooobob";
+        Assert.assertEquals(object.replaceAllSubstringsInString(string, "obo", "ob"), "obdobboobbobbobbb");
+    }
 }

@@ -88,4 +88,17 @@ public class ClassForStringMethods {
         }
         return count;
     }
+
+    public String replaceAllSubstringsInString(String string, String replaceable, String placeholder) {
+        String resultOfMethod = string;
+        int i = 0;
+        while (resultOfMethod.contains(replaceable)) {
+            if (i == 100) {
+                break;
+            }
+            resultOfMethod = resultOfMethod.replaceAll(replaceable, placeholder);
+            i++;
+        }
+        return resultOfMethod;
+    }
 }
