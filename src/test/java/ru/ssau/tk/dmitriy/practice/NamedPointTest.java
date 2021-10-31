@@ -28,5 +28,9 @@ public class NamedPointTest {
         Assert.assertEquals(firstPoint.getName(), "ImagineDragons");
         thirdPoint.reset();
         Assert.assertEquals(thirdPoint.getName(), "Absent");
+        firstPoint.setName(null);
+        Assert.assertEquals(firstPoint.toString(), "[0.0, 0.0, 0.0]");
+        Assert.assertEquals(secondPoint.toString(), "[5.0, 6.0, -3.0]");
+        Assert.assertEquals(thirdPoint.toString(), "Absent [3.0, 1.0, -4.0]");
     }
 }
