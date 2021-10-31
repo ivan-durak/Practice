@@ -71,7 +71,7 @@ public class PersonTest {
     @Test
     public void testOfFirstConstructor() { //Конструктор без параметров
         Person testObject = new Person();
-        Assert.assertEquals(testObject.getFirstName(), ""); ////в оригинальном кострукторе так
+        Assert.assertEquals(testObject.getFirstName(), ""); ////в оригинальном конструкторе так
         Assert.assertEquals(testObject.getLastName(), "");
         Assert.assertEquals(testObject.getPassportId(), 0);
     }
@@ -89,7 +89,7 @@ public class PersonTest {
     public void testOfThirdConstructor() { //Конструктор с одним параметром:паспорт
         int testValue = 237451982;
         Person testObject = new Person(testValue);
-        Assert.assertEquals(testObject.getFirstName(), ""); //в оригинальном кострукторе так
+        Assert.assertEquals(testObject.getFirstName(), ""); //в оригинальном конструкторе так
         Assert.assertEquals(testObject.getLastName(), "");
         Assert.assertEquals(testObject.getPassportId(), 237451982);
     }
@@ -105,7 +105,7 @@ public class PersonTest {
     }
 
     @Test
-    public void testOfFifthConstructor() { //Коструктор с 4-мя параметрами
+    public void testOfFifthConstructor() { //Конструктор с 4-мя параметрами
         String testFirstName = "Павел", testLastName = "Овчинкин";
         int testPassportId = 349023185;
         Gender gender = Gender.MALE;
@@ -114,5 +114,12 @@ public class PersonTest {
         Assert.assertEquals(testObject.getLastName(), "Овчинкин");
         Assert.assertEquals(testObject.getPassportId(), 349023185);
         Assert.assertEquals(testObject.getGender(), Gender.MALE);
+    }
+
+    @Test
+    public void testToString() {
+        String testFirstName = "Арарат", testLastName = "Манекян";
+        Person testObject = new Person(testFirstName, testLastName);
+        Assert.assertEquals(testObject.toString(), "This Person is Арарат Манекян");
     }
 }
