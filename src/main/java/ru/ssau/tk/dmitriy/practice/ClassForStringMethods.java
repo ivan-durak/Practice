@@ -101,4 +101,11 @@ public class ClassForStringMethods {
         }
         return resultOfMethod;
     }
+
+    public String searchASubstringWithConditions(String string, int from, int to) {
+        if (from >= to) {
+            return null;
+        }
+        return string.substring((Math.max(from, 0)), (Math.min(to, string.length())));
+    }
 }

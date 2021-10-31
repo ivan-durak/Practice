@@ -80,4 +80,14 @@ public class ClassForStringMethodsTest {
         string = "oboodoboboobbobobobooobob";
         Assert.assertEquals(object.replaceAllSubstringsInString(string, "obo", "ob"), "obdobboobbobbobbb");
     }
+
+    @Test
+    public void testSearchASubstringWithConditions() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        String string = "Antidisestablishmentarianism";
+        Assert.assertNull(object.searchASubstringWithConditions(string, 8, 6));
+        Assert.assertEquals(object.searchASubstringWithConditions(string, -2, 10), "Antidisest");
+        Assert.assertEquals(object.searchASubstringWithConditions(string, 24, 30), "nism");
+        Assert.assertEquals(object.searchASubstringWithConditions(string, 10, 20), "ablishment");
+    }
 }
