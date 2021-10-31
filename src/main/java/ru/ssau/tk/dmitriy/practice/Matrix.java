@@ -1,5 +1,7 @@
 package ru.ssau.tk.dmitriy.practice;
 
+import java.util.Arrays;
+
 public class Matrix {
     private double[][] matrix;
     private final int numberOfLines;
@@ -25,5 +27,17 @@ public class Matrix {
 
     public int getNumberOfColumns() {
         return numberOfColumns;
+    }
+
+    @Override
+    public String toString() {
+        String string = "";
+        for (int i = 0; i < numberOfLines; i++) {
+            for (int j = 0; j < numberOfColumns; j++) {
+                string = string.concat(matrix[i][j] + (j == numberOfColumns - 1 ? ";" : ", "));
+            }
+            string = string.concat("\n");
+        }
+        return string;
     }
 }

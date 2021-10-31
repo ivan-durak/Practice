@@ -6,6 +6,19 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class MatrixTest {
+    public static void main(String[] args) {
+        Matrix matrix = new Matrix(4, 3);
+        matrix.setAt(0, 0, 3);
+        matrix.setAt(0, 1, 5);
+        matrix.setAt(0, 2, 7);   // 3 5 7
+        matrix.setAt(1, 0, 2);   // 2 1 8
+        matrix.setAt(1, 1, 1);   // 6 3 1
+        matrix.setAt(1, 2, 8);
+        matrix.setAt(2, 0, 6);
+        matrix.setAt(2, 1, 3);
+        matrix.setAt(2, 2, 1);
+        System.out.println(matrix);
+    }
 
     @Test
     public void testGettersAndSetters() {
