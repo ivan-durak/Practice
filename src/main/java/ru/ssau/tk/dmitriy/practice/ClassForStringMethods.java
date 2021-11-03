@@ -3,7 +3,21 @@ package ru.ssau.tk.dmitriy.practice;
 public class ClassForStringMethods {
     public static void main(String[] args) {
         ClassForStringMethods object = new ClassForStringMethods();
-        object.studyingCharacterEscaping();
+        //object.studyingCharacterEscaping();
+        Person person = new Person("Антуан", "Березов", 25341746, "MALE");
+        Point point = new Point(2, 5, 9);
+        NamedPoint namedPoint = new NamedPoint(13, 4, 7, "Джон");
+        Matrix matrix = new Matrix(2, 3);
+        matrix.setAt(0, 1, 23);
+        matrix.setAt(1, 0, 9);
+        matrix.setAt(1, 2, 11);
+        object.descriptionOfTheObject(person);
+        System.out.println();
+        object.descriptionOfTheObject(point);
+        System.out.println();
+        object.descriptionOfTheObject(namedPoint);
+        System.out.println();
+        object.descriptionOfTheObject(matrix);
     }
 
     public void stringCharactersInTheConsole(String string) {
@@ -107,5 +121,10 @@ public class ClassForStringMethods {
             return null;
         }
         return string.substring((Math.max(from, 0)), (Math.min(to, string.length())));
+    }
+
+    public void descriptionOfTheObject(Object object) {
+        System.out.println("Описание объекта: ");
+        System.out.print(object);
     }
 }
