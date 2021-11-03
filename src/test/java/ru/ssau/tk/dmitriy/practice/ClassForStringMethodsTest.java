@@ -90,4 +90,15 @@ public class ClassForStringMethodsTest {
         Assert.assertEquals(object.searchASubstringWithConditions(string, 24, 30), "nism");
         Assert.assertEquals(object.searchASubstringWithConditions(string, 10, 20), "ablishment");
     }
+
+    @Test
+    public void testSplittingAStringIntoSeparateWords() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        String sourceString = "sign ghost participle adjective uncomplicated";
+        Assert.assertEquals(object.splittingAStringIntoSeparateWords(sourceString), new String[]{"Sign", "Ghost",//
+                "Participle", "Adjective", "Uncomplicated"});
+        sourceString = "bear lynx  bird thor calendar";
+        Assert.assertEquals(object.splittingAStringIntoSeparateWords(sourceString), new String[]{"Bear", "Lynx", "",//
+                "Bird", "Thor", "Calendar"});
+    }
 }

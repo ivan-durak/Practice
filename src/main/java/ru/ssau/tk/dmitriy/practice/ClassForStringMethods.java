@@ -1,9 +1,11 @@
 package ru.ssau.tk.dmitriy.practice;
 
+import java.util.Objects;
+
 public class ClassForStringMethods {
     public static void main(String[] args) {
         ClassForStringMethods object = new ClassForStringMethods();
-        //object.studyingCharacterEscaping();
+        object.studyingCharacterEscaping();
         Person person = new Person("Антуан", "Березов", 25341746, "MALE");
         Point point = new Point(2, 5, 9);
         NamedPoint namedPoint = new NamedPoint(13, 4, 7, "Джон");
@@ -126,5 +128,16 @@ public class ClassForStringMethods {
     public void descriptionOfTheObject(Object object) {
         System.out.println("Описание объекта: ");
         System.out.print(object);
+    }
+
+    public String[] splittingAStringIntoSeparateWords(String sourceString) {
+        String[] array = sourceString.split(" ");
+        for (int i = 0; i < array.length; i++) {
+            if (Objects.equals(array[i], "")) {
+                continue;
+            }
+            array[i] = array[i].substring(0, 1).toUpperCase().concat(array[i].substring(1));
+        }
+        return array;
     }
 }
