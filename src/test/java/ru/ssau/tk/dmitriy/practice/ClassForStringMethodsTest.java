@@ -101,4 +101,11 @@ public class ClassForStringMethodsTest {
         Assert.assertEquals(object.splittingAStringIntoSeparateWords(sourceString), new String[]{"Bear", "Lynx", "",//
                 "Bird", "Thor", "Calendar"});
     }
+
+    @Test
+    public void testCombiningAllRowsIntoOne() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        String[] stringArray = {"dream", "cubicle", "man"};
+        Assert.assertEquals(object.combiningAllRowsIntoOne(stringArray), "dream, cubicle, man");
+    }
 }

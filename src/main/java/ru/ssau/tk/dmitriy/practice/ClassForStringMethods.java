@@ -140,4 +140,12 @@ public class ClassForStringMethods {
         }
         return array;
     }
+
+    public String combiningAllRowsIntoOne(String[] stringArray) {
+        String outPutString = "";
+        for (String string : stringArray) {
+            outPutString = String.join(", ", stringArray);
+        }
+        return outPutString;
+    }
 }
