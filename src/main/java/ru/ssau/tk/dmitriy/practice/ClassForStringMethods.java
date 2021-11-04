@@ -1,6 +1,7 @@
 package ru.ssau.tk.dmitriy.practice;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 public class ClassForStringMethods {
@@ -23,6 +24,11 @@ public class ClassForStringMethods {
         object.descriptionOfTheObject(matrix);
         System.out.println(object.numberEnumerationString(10000));
         System.out.println(Charset.defaultCharset());
+        System.out.println(object.changingTheStringEncoding("megamind", StandardCharsets.UTF_8, StandardCharsets.UTF_16));
+        System.out.println(object.changingTheStringEncoding("megamind", StandardCharsets.UTF_8, StandardCharsets.UTF_16BE));
+        System.out.println(object.changingTheStringEncoding("megamind", StandardCharsets.UTF_8, StandardCharsets.UTF_16LE));
+        System.out.println(object.changingTheStringEncoding("megamind", StandardCharsets.UTF_8, StandardCharsets.US_ASCII));
+        System.out.println(object.changingTheStringEncoding("megamind", StandardCharsets.UTF_8, StandardCharsets.ISO_8859_1));
     }
 
     public void stringCharactersInTheConsole(String string) {
@@ -170,5 +176,9 @@ public class ClassForStringMethods {
             string.append(i).append(" ");
         }
         return string.toString();
+    }
+
+    public String changingTheStringEncoding(String string, Charset first, Charset second) {
+        return new String(string.getBytes(first), second);
     }
 }
