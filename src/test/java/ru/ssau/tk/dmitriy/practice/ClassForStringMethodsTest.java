@@ -108,4 +108,13 @@ public class ClassForStringMethodsTest {
         String[] stringArray = {"dream", "cubicle", "man"};
         Assert.assertEquals(object.combiningAllRowsIntoOne(stringArray), "dream, cubicle, man");
     }
+
+    @Test
+    public void testChangingLettersToIndexes() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        String string = "electricity";
+        Assert.assertEquals(object.changingLettersToIndexes(string), "y01i8i6t4e2e");
+        string = "spotted";
+        Assert.assertEquals(object.changingLettersToIndexes(string), "d6t4o2s");
+    }
 }

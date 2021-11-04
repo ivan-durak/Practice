@@ -148,4 +148,16 @@ public class ClassForStringMethods {
         }
         return outPutString;
     }
+
+    public String changingLettersToIndexes(String sourceString) {
+        StringBuilder string = new StringBuilder(sourceString);
+        for (int i = 0; i < sourceString.length(); i++) {
+            if (i % 2 == 1) {
+                string.deleteCharAt(i);
+                string.insert(i, i + 1);
+            }
+        }
+        string.reverse();
+        return string.toString();
+    }
 }
