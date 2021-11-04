@@ -20,6 +20,7 @@ public class ClassForStringMethods {
         object.descriptionOfTheObject(namedPoint);
         System.out.println();
         object.descriptionOfTheObject(matrix);
+        System.out.println(object.numberEnumerationString(10000));
     }
 
     public void stringCharactersInTheConsole(String string) {
@@ -158,6 +159,14 @@ public class ClassForStringMethods {
             }
         }
         string.reverse();
+        return string.toString();
+    }
+
+    public String numberEnumerationString(int number) {
+        StringBuilder string = new StringBuilder(number);
+        for (int i = 0; i < number; i++) {
+            string.append(i).append(" ");
+        }
         return string.toString();
     }
 }

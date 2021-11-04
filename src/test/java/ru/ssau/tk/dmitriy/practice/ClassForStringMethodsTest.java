@@ -117,4 +117,11 @@ public class ClassForStringMethodsTest {
         string = "spotted";
         Assert.assertEquals(object.changingLettersToIndexes(string), "d6t4o2s");
     }
+
+    @Test
+    public void testNumberEnumerationString() {
+        ClassForStringMethods object = new ClassForStringMethods();
+        Assert.assertEquals(object.numberEnumerationString(7), "0 1 2 3 4 5 6 ");
+        Assert.assertEquals(object.numberEnumerationString(15), "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 ");
+    }
 }
