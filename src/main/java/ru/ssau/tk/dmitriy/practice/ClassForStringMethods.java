@@ -1,5 +1,6 @@
 package ru.ssau.tk.dmitriy.practice;
 
+import java.nio.charset.Charset;
 import java.util.Objects;
 
 public class ClassForStringMethods {
@@ -21,6 +22,7 @@ public class ClassForStringMethods {
         System.out.println();
         object.descriptionOfTheObject(matrix);
         System.out.println(object.numberEnumerationString(10000));
+        System.out.println(Charset.defaultCharset());
     }
 
     public void stringCharactersInTheConsole(String string) {
