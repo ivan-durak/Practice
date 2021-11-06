@@ -33,4 +33,17 @@ public class ClassForExceptionMethodsTest {
             object.arrayOfCharactersFromArrayOfStrings(new String[]{"descendant", "stream", "kettle", "pedestrian"}, 14);
         });
     }
+
+    @Test
+    public void testSpecificCharacterOfArrayOfStrings() {
+        ClassForExceptionMethods object = new ClassForExceptionMethods();
+        Assert.assertEquals(object.specificCharacterOfArrayOfStrings(new String[]{"battery", "wire", "mirror", "powder"},//
+                1, 3), 'e');
+        Assert.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+            object.specificCharacterOfArrayOfStrings(new String[]{"battery", "wire", "mirror", "powder"}, 5, 2);
+        });
+        Assert.assertThrows(StringIndexOutOfBoundsException.class, () -> {
+            object.specificCharacterOfArrayOfStrings(new String[]{"battery", "wire", "mirror", "powder"}, 2, 7);
+        });
+    }
 }

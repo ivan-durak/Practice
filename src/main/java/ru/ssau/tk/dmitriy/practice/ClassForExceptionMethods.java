@@ -12,4 +12,8 @@ public class ClassForExceptionMethods {
         }
         return chars;
     }
+
+    public char specificCharacterOfArrayOfStrings(String[] strings, int row, int index) {
+        return strings[row].charAt(index);
+    }
 }
