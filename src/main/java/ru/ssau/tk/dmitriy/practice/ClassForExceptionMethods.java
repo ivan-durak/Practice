@@ -16,4 +16,8 @@ public class ClassForExceptionMethods {
     public char specificCharacterOfArrayOfStrings(String[] strings, int row, int index) {
         return strings[row].charAt(index);
     }
+
+    public int dividingNumbersFromStrings(String firstNumber, String secondNumber) {
+        return Integer.parseInt(firstNumber) / Integer.parseInt(secondNumber);
+    }
 }

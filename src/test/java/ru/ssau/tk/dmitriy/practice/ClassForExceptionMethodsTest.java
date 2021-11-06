@@ -46,4 +46,17 @@ public class ClassForExceptionMethodsTest {
             object.specificCharacterOfArrayOfStrings(new String[]{"battery", "wire", "mirror", "powder"}, 2, 7);
         });
     }
+
+    @Test
+    public void testDividingNumbersFromStrings() {
+        ClassForExceptionMethods object = new ClassForExceptionMethods();
+        Assert.assertEquals(object.dividingNumbersFromStrings("5", "2"), 2);
+        Assert.assertEquals(object.dividingNumbersFromStrings("7", "4"), 1);
+        Assert.assertThrows(NumberFormatException.class, () -> {
+            object.dividingNumbersFromStrings("eleven", "four");
+        });
+        Assert.assertThrows(ArithmeticException.class, () -> {
+            object.dividingNumbersFromStrings("9", "0");
+        });
+    }
 }
