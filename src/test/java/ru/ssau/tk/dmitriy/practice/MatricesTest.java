@@ -9,6 +9,9 @@ public class MatricesTest {
 
     @Test
     public void testSumOfMatrix() {
+        Matrix matrix1 = new Matrix(2, 4);
+        Matrix matrix2 = new Matrix(2, 3);
+        Assert.assertThrows(IncompatibleDimensionsException.class, () -> Matrices.sumOfMatrix(matrix1, matrix2));
         Matrix firstMatrix = new Matrix(3, 3);
         firstMatrix.setAt(0, 0, 3);
         firstMatrix.setAt(0, 1, 5);
@@ -38,6 +41,9 @@ public class MatricesTest {
 
     @Test
     public void testSubtractOfMatrix() {
+        Matrix matrix1 = new Matrix(2, 4);
+        Matrix matrix2 = new Matrix(2, 3);
+        Assert.assertThrows(IncompatibleDimensionsException.class, () -> Matrices.subtractOfMatrix(matrix1, matrix2));
         Matrix firstMatrix = new Matrix(3, 3);
         firstMatrix.setAt(0, 0, 3);
         firstMatrix.setAt(0, 1, 5);
@@ -87,6 +93,9 @@ public class MatricesTest {
 
     @Test
     public void testMultiplyOfMatrix() {
+        Matrix matrix1 = new Matrix(2, 4);
+        Matrix matrix2 = new Matrix(2, 3);
+        Assert.assertThrows(IncompatibleDimensionsException.class, () -> Matrices.multiplyOfMatrix(matrix1, matrix2));
         Matrix firstMatrix = new Matrix(3, 3);
         firstMatrix.setAt(0, 0, 3);
         firstMatrix.setAt(0, 1, 5);

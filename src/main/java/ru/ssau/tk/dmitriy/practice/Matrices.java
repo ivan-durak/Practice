@@ -2,9 +2,14 @@ package ru.ssau.tk.dmitriy.practice;
 
 public class Matrices {
     public static Matrix sumOfMatrix(Matrix firstMatrix, Matrix secondMatrix) {
-        if ((firstMatrix.getNumberOfLines() != secondMatrix.getNumberOfLines())//
+        boolean areLengthsEqual;
+        if ((areLengthsEqual = (firstMatrix.getNumberOfLines() != secondMatrix.getNumberOfLines()))//
                 || (firstMatrix.getNumberOfColumns() != secondMatrix.getNumberOfColumns())) {
-            return null;
+            if (areLengthsEqual) {
+                throw new IncompatibleDimensionsException("different number of lines");
+            } else {
+                throw new IncompatibleDimensionsException("different number of columns");
+            }
         }
         Matrix newMatrix = new Matrix(firstMatrix.getNumberOfLines(), firstMatrix.getNumberOfColumns());
         for (int i = 0; i < firstMatrix.getNumberOfLines(); i++) {
@@ -16,9 +21,14 @@ public class Matrices {
     }
 
     public static Matrix subtractOfMatrix(Matrix firstMatrix, Matrix secondMatrix) {
-        if ((firstMatrix.getNumberOfLines() != secondMatrix.getNumberOfLines())//
+        boolean areLengthsEqual;
+        if ((areLengthsEqual = (firstMatrix.getNumberOfLines() != secondMatrix.getNumberOfLines()))//
                 || (firstMatrix.getNumberOfColumns() != secondMatrix.getNumberOfColumns())) {
-            return null;
+            if (areLengthsEqual) {
+                throw new IncompatibleDimensionsException("different number of lines");
+            } else {
+                throw new IncompatibleDimensionsException("different number of columns");
+            }
         }
         Matrix newMatrix = new Matrix(firstMatrix.getNumberOfLines(), firstMatrix.getNumberOfColumns());
         for (int i = 0; i < firstMatrix.getNumberOfLines(); i++) {
@@ -41,7 +51,7 @@ public class Matrices {
 
     public static Matrix multiplyOfMatrix(Matrix firstMatrix, Matrix secondMatrix) {
         if (firstMatrix.getNumberOfLines() != secondMatrix.getNumberOfColumns()) {
-            return null;
+            throw new IncompatibleDimensionsException("The number of rows is not equal to the number of columns");
         }
         Matrix newMatrix = new Matrix(firstMatrix.getNumberOfLines(), secondMatrix.getNumberOfColumns());
         for (int k = 0; k < firstMatrix.getNumberOfLines(); k++) {
