@@ -59,4 +59,13 @@ public class ClassForExceptionMethodsTest {
             object.dividingNumbersFromStrings("9", "0");
         });
     }
+
+    @Test
+    public void testThrowUncheckedException() {
+        try {
+            ClassForExceptionMethods.throwUncheckedException();
+        } catch (SecondClassException secondClassException) {
+            Assert.assertTrue(secondClassException.getCause() instanceof FirstClassException);
+        }
+    }
 }

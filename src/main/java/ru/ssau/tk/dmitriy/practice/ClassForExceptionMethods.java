@@ -20,4 +20,16 @@ public class ClassForExceptionMethods {
     public int dividingNumbersFromStrings(String firstNumber, String secondNumber) {
         return Integer.parseInt(firstNumber) / Integer.parseInt(secondNumber);
     }
+
+    public static void throwCheckedException() throws FirstClassException {
+        throw new FirstClassException();
+    }
+
+    public static void throwUncheckedException() {
+        try {
+            ClassForExceptionMethods.throwCheckedException();
+        } catch (FirstClassException firstClassException) {
+            throw new SecondClassException(firstClassException);
+        }
+    }
 }
